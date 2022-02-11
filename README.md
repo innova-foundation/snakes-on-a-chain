@@ -1,5 +1,5 @@
 # snakes-on-a-chain
-![Imgur Image](https://i.imgur.com/7pgCRBV.png)
+![Imgur Image](https://camo.githubusercontent.com/2b8284e38ddc67db8a01cc2027dc4f65d3c78e4e220d9668a47ec1526510f7e3/68747470733a2f2f692e696d6775722e636f6d2f5a6f30757a77392e706e67)
 
 Innova Python RPC Daemon scripts  
 For python innova RPC use https://github.com/innova-foundation/python-innovarpc  
@@ -11,50 +11,55 @@ https://blockforums.org/topic/377-setting-up-grafana-and-influxdb-docker-contain
 
 #### python blockcount.py  
 ```
-2491056
-('latest block ', 2491056)
-('latest block ', 2491057)
-('latest block ', 2491058)
+1882413
+('latest block ', 1882413)
+('latest block ', 1882414)
+('latest block ', 1882415)
 ```
 #### python blockdata.py  
 ```
-latest block: 2491411
-epoch: 1570730014
-converted time: 2019-10-10 10:53:34
-bestblockhash: 0000000000069e7d25de16bd3c2b244e0edf66e4191820a3345f458577c65179
-Type of Work: proof-of-work
-circulating: 6415473.59282623
-Collateralnodes: 357
-last block delta: 1570730014  seconds
-latest block: 2491412
-epoch: 1570730090
-converted time: 2019-10-10 10:54:50
-bestblockhash: 99888746101dd3e798790fee574cc4d5dfa78496e76834328acc69730f349725
+latest block: 1882408
+epoch: 1644602624
+converted time: 2022-02-11 13:03:44
+bestblockhash: f8f9b7ba22c2994fbaca72d986f0134aa1b3244ee66a39f15969bc415f78035a
 Type of Work: proof-of-stake
-circulating: 6415473.60071664
-Collateralnodes: 357
-last block delta: 76  seconds
-latest block: 2491413
-epoch: 1570730108
-converted time: 2019-10-10 10:55:08
-bestblockhash: 86acf0fa67f798d32fb3706f317f47750f96b4dab01f3a1ec92608390baab16e
+circulating: 7575018.76210423
+Collateralnodes: 21
+last block delta: 1644602624  seconds
+latest block: 1882410
+epoch: 1644602790
+converted time: 2022-02-11 13:06:30
+bestblockhash: 486fe5e3c261887d1798c653b0a00e8b4b53e7220981203b00848f18da77f15f
 Type of Work: proof-of-stake
-circulating: 6415473.60679883
-Collateralnodes: 357
-last block delta: 18  seconds
+circulating: 7575019.33465217
+Collateralnodes: 21
+last block delta: 35  seconds
+latest block: 1882411
+epoch: 1644602852
+converted time: 2022-02-11 13:07:32
+bestblockhash: a853b476c44f71bcb6f5dac665c25aed31eef09658dc70de50853ff76b4f9af9
+Type of Work: proof-of-stake
+circulating: 7575019.77372066
+Collateralnodes: 21
+last block delta: 24  seconds
 ```  
 #### python cnwinner.py  
 ```
-Winner of block 2524048 is DTaV7aXwUHNdACLTWmMJytu3ZsNqbB2VKV
-Winner of block 2524049 is D9XwyKehex5mC6cqgpBSUngHoDna3EoUD6
-Winner of block 2524050 is D5PaAPbNugjfHNnH6MbJKUWozBMRiL1N8q
-Winner of block 2524051 is DFjpnJLXEBDDCucffShyoYUQpQ7FTypHpx
-Winner of block 2524052 is DQ45tg4wnpRSJFWLnZecp5FfXXkQWUVtd4
-Winner of block 2524053 is DRMbq6mZre8J4gdLA1xGetr3gpG2e6uyBo
-Winner of block 2524054 is DAPGJ29kJYJyuXpE2ATGd6QPkwKUe9c9Eb
-Winner of block 2524055 is DGGrUsauDK3j1W4cdYFPxAZMPo8gfyucNB
-Winner of block 2524056 is D8jugMuwjk5ihzAyqfyrK7GuFS4sGeRu5x
-Winner of block 2524057 is D5tuxvswmzHtoms2r76XaVSs3Kc58H4xiQ
+Winner of block 1882393 is iEvoM9J9TszGx4tgU4EAcerqsfBEGfbMXt
+Winner of block 1882394 is iCUzymwxCf8V4HWvYChiLGYXKhTSEaaE8f
+Winner of block 1882395 is iCUzymwxCf8V4HWvYChiLGYXKhTSEaaE8f
+Winner of block 1882396 is iNHioiKUau4FmtTwT2WFRQcjeQLLnyV4R5
+Winner of block 1882397 is iNHioiKUau4FmtTwT2WFRQcjeQLLnyV4R5
+Winner of block 1882398 is iCUzymwxCf8V4HWvYChiLGYXKhTSEaaE8f
+Winner of block 1882399 is iRGQdFVZuyciXca4ttVTFVr3ThDL5wZ8hg
+Winner of block 1882400 is iRGQdFVZuyciXca4ttVTFVr3ThDL5wZ8hg
+Winner of block 1882401 is iBxkgPucWhSz6ARbejRwznD3RMNur3BGQD
+Winner of block 1882402 is iSM8P3ibwu6a5KK29GCQubsBTkScKNDHYc
+Winner of block 1882403 is iEPTABUiwoEmxeBUgiAicqUrha1ev9wFvv
+Winner of block 1882404 is iEPTABUiwoEmxeBUgiAicqUrha1ev9wFvv
+Winner of block 1882405 is iAt1YJprLBKcYDvmosraGJoJrJVTGKX1EC
+Winner of block 1882406 is iAt1YJprLBKcYDvmosraGJoJrJVTGKX1EC
+Winner of block 1882407 is iJvNJANUWTY2cgBpfMPK3f2EQ6QCMFywAp
 ```
 #### Docker Setup
 Create a data directory and also a userid to use for the grafana Docker container  
