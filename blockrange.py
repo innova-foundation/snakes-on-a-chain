@@ -1,4 +1,4 @@
-from denariusrpc.authproxy import AuthServiceProxy, JSONRPCException
+from innovarpc.authproxy import AuthServiceProxy, JSONRPCException
 
 import time
 import sys
@@ -7,8 +7,8 @@ import urllib
 import json
 from influxdb import InfluxDBClient
 
-# rpc_user and rpc_password are set in the denarius.conf file
-rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:32369"%("rpcuser", "rpcpassword"))
+# rpc_user and rpc_password are set in the innova.conf file
+rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:14531"%("rpcuser", "rpcpassword"))
 
 #for i in range(3):
 #    print(i)
@@ -30,7 +30,7 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 # Run until you get a ctrl^c
 #def main():

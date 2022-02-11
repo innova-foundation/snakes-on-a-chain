@@ -1,7 +1,7 @@
-from denariusrpc.authproxy import AuthServiceProxy, JSONRPCException
+from innovarpc.authproxy import AuthServiceProxy, JSONRPCException
 
-# rpc_user and rpc_password are set in the denarius.conf file
-rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:32369"%("RPCUSER", "RPCPASS"))
+# rpc_user and rpc_password are set in the innova.conf file
+rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:14531"%("RPCUSER", "RPCPASS"))
 import time
 import sys
 import datetime
@@ -14,7 +14,7 @@ from influxdb import InfluxDBClient
 host = "127.0.0.1" # My Ubuntu NUC
 port = 8086 # default port
 user = "adminusername" # the user/password created for the pi, with write access
-password = "adminpassword" 
+password = "adminpassword"
 dbname = "powend" # the database we created earlier
 interval = 60 # Sample period in seconds
 
@@ -27,16 +27,16 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 import time
-denariuswinurl = "https://pos.watch/win.json"
-response = urllib.urlopen(denariuswinurl)
+innovawinurl = "https://pos.watch/win.json"
+response = urllib.urlopen(innovawinurl)
 windata = json.loads(response.read())
 averageblocktime = float(windata['blocktime'])
 print (averageblocktime)
 
-powend = 3000000
+powend = 50000
 # get latest block count
 block = rpc_connection.getblockcount()
 blocksleft = powend - block

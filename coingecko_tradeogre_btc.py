@@ -20,14 +20,14 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 ts = int(time.time())
 print(ts)
 grafanatime=ts * 1000000000
 print(grafanatime)
 
-coingecko_ogre_url = requests.get('https://api.coingecko.com/api/v3/coins/denarius/tickers?exchange_ids=trade_ogre')
+coingecko_ogre_url = requests.get('https://api.coingecko.com/api/v3/coins/innova/tickers?exchange_ids=trade_ogre')
 coingecko_ogre_data = json.loads(coingecko_ogre_url.text)
 coingecko_ogre_price = coingecko_ogre_data['tickers']
 

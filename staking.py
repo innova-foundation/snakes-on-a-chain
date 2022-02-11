@@ -1,4 +1,4 @@
-#from denariusrpc.authproxy import AuthServiceProxy, JSONRPCException
+#from innovarpc.authproxy import AuthServiceProxy, JSONRPCException
 
 import time
 import sys
@@ -8,14 +8,14 @@ import json
 import requests
 from influxdb import InfluxDBClient
 
-# rpc_user and rpc_password are set in the denarius.conf file
-#rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:32369"%("rpcuser", "rpcpassword"))
+# rpc_user and rpc_password are set in the innova.conf file
+#rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:14531"%("rpcuser", "rpcpassword"))
 
 # Configure InfluxDB connection variables
 host = "127.0.0.1" # My Ubuntu NUC
 port = 8086 # default port
 user = "admin" # the user/password created
-password = "admin" 
+password = "admin"
 dbname = "chainz_stakes" # the database we created earlier
 interval = 60 # Sample period in seconds
 
@@ -25,7 +25,7 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 # Get current epochtime
 ts = int(time.time())
@@ -39,8 +39,8 @@ print(grafanatime)
 
 # TODO: Add error handling
 
-staking = requests.get("https://chainz.cryptoid.info/explorer/index.stakes.dws?coin=d").json()
-circulating = float(requests.get("https://chainz.cryptoid.info/d/api.dws?q=circulating").text)
+staking = requests.get("https://chainz.cryptoid.info/explorer/index.stakes.dws?coin=inn").json()
+circulating = float(requests.get("https://chainz.cryptoid.info/inn/api.dws?q=circulating").text)
 
 staking_sum = sum(map(lambda x: float(x['amount'] or 0), staking['stakes']))
 

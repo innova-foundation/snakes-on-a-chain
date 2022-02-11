@@ -1,5 +1,5 @@
 # crontab -e
-# * * * * * $(which python) /home/denarius/python/coingecko_southxchange_btc.py >> ~/cron.log 2>&1
+# * * * * * $(which python) /home/innova/python/coingecko_southxchange_btc.py >> ~/cron.log 2>&1
 
 import time
 import sys
@@ -23,7 +23,7 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 # Get current epochtime
 ts = int(time.time())
@@ -32,7 +32,7 @@ print(ts)
 grafanatime=ts * 1000000000
 print(grafanatime)
 
-coingecko_southx_url = requests.get('https://api.coingecko.com/api/v3/coins/denarius/tickers?exchange_ids=south_xchange')
+coingecko_southx_url = requests.get('https://api.coingecko.com/api/v3/coins/innova/tickers?exchange_ids=south_xchange')
 coingecko_southx_data = json.loads(coingecko_southx_url.text)
 coingecko_southx_price = coingecko_southx_data['tickers']
 

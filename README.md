@@ -1,11 +1,11 @@
 # snakes-on-a-chain
 ![Imgur Image](https://i.imgur.com/7pgCRBV.png)
 
-Denarius Python RPC Daemon scripts  
-For python denarius RPC use https://github.com/buzzkillb/python-denariusrpc  
-sample site using grafana and influxdb https://denarius.pro  
-guide to setting up Denarius Python RPC, influxdb, grafana and putting current block height in the dashboard.  
-https://blockforums.org/topic/334-crypto-stats-using-grafana-influxdb-denarius-daemon/  
+Innova Python RPC Daemon scripts  
+For python innova RPC use https://github.com/innova-foundation/python-innovarpc  
+sample site using grafana and influxdb https://innova.pro  
+guide to setting up Innova Python RPC, influxdb, grafana and putting current block height in the dashboard.  
+https://blockforums.org/topic/334-crypto-stats-using-grafana-influxdb-innova-daemon/  
 guide to setting up to read Coingecko API  
 https://blockforums.org/topic/377-setting-up-grafana-and-influxdb-docker-containers-and-showing-some-apis-stats/
 
@@ -24,7 +24,7 @@ converted time: 2019-10-10 10:53:34
 bestblockhash: 0000000000069e7d25de16bd3c2b244e0edf66e4191820a3345f458577c65179
 Type of Work: proof-of-work
 circulating: 6415473.59282623
-Fortunastakes: 357
+Collateralnodes: 357
 last block delta: 1570730014  seconds
 latest block: 2491412
 epoch: 1570730090
@@ -32,7 +32,7 @@ converted time: 2019-10-10 10:54:50
 bestblockhash: 99888746101dd3e798790fee574cc4d5dfa78496e76834328acc69730f349725
 Type of Work: proof-of-stake
 circulating: 6415473.60071664
-Fortunastakes: 357
+Collateralnodes: 357
 last block delta: 76  seconds
 latest block: 2491413
 epoch: 1570730108
@@ -40,10 +40,10 @@ converted time: 2019-10-10 10:55:08
 bestblockhash: 86acf0fa67f798d32fb3706f317f47750f96b4dab01f3a1ec92608390baab16e
 Type of Work: proof-of-stake
 circulating: 6415473.60679883
-Fortunastakes: 357
+Collateralnodes: 357
 last block delta: 18  seconds
 ```  
-#### python fswinner.py  
+#### python cnwinner.py  
 ```
 Winner of block 2524048 is DTaV7aXwUHNdACLTWmMJytu3ZsNqbB2VKV
 Winner of block 2524049 is D9XwyKehex5mC6cqgpBSUngHoDna3EoUD6
@@ -56,7 +56,7 @@ Winner of block 2524055 is DGGrUsauDK3j1W4cdYFPxAZMPo8gfyucNB
 Winner of block 2524056 is D8jugMuwjk5ihzAyqfyrK7GuFS4sGeRu5x
 Winner of block 2524057 is D5tuxvswmzHtoms2r76XaVSs3Kc58H4xiQ
 ```
-#### Docker Setup 
+#### Docker Setup
 Create a data directory and also a userid to use for the grafana Docker container  
 ```
 mkdir data # creates a folder for your data
@@ -78,7 +78,7 @@ docker run -d \
 -e "GF_AUTH_ANONYMOUS_ENABLED=true" \
 -e "GF_AUTH_ANONYMOUS_ORG_ROLE=Viewer" \
 -e "GF_ANALYTICS_GOOGLE_ANALYTICS_UA_ID=UA-157676508-1" \
--e "GF_SERVER_DOMAIN=denarius.pro" \
+-e "GF_SERVER_DOMAIN=innova.pro" \
 grafana/grafana
 ```
 Check this is up by going to your IP:3000  

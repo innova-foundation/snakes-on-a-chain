@@ -1,9 +1,9 @@
-from denariusrpc.authproxy import AuthServiceProxy, JSONRPCException
+from innovarpc.authproxy import AuthServiceProxy, JSONRPCException
 
-# rpc_user and rpc_password are set in the denarius.conf file
-rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:32369"%("rpcuser", "rpcpassword"))
-get_fortunastake_info = rpc_connection.fortunastake('list', 'full')
-print(get_fortunastake_info)
+# rpc_user and rpc_password are set in the innova.conf file
+rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:14531"%("rpcuser", "rpcpassword"))
+get_collateralnode_info = rpc_connection.collateralnode('list', 'full')
+print(get_collateralnode_info)
 import time
 import sys
 import datetime
@@ -25,7 +25,7 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 # Run until you get a ctrl^c
 #def main():
@@ -41,9 +41,9 @@ moneysupply = float(getblockhash['moneysupply'])
 getblockhashinfo = rpc_connection.getblock(bestblockhash)
 blockhashinfowork = str(getblockhashinfo['flags'])
 blockhashinfotime = int(getblockhashinfo['time']) * 1000000000
-# fortunastake info
-fortunastakeinfo = rpc_connection.fortunastake('count')
-fortunastakecount = fortunastakeinfo
+# collateralnode info
+collateralnodeinfo = rpc_connection.collateralnode('count')
+collateralnodecount = collateralnodeinfo
 iso = time.ctime()
 # mining info
 get_mining_info = rpc_connection.getmininginfo()
@@ -53,9 +53,9 @@ mininghashrate = float(get_mining_info[u'netmhashps'])
 # staking info
 get_staking_info = rpc_connection.getstakinginfo()
 netstakeweight = float(get_staking_info[u'netstakeweight'])
-#import denarius.win json
-denariuswinurl = "https://pos.watch/win.json"
-response = urllib.urlopen(denariuswinurl)
+#import innova.win json
+innovawinurl = "https://pos.watch/win.json"
+response = urllib.urlopen(innovawinurl)
 windata = json.loads(response.read())
 dailyreward = float(windata['dailyreward'])
 averageblocktime = float(windata['blocktime'])
@@ -78,7 +78,7 @@ data = [
                   "work" : blockhashinfowork,
                   "bestblockhash" : bestblockhash,
                   "moneysupply" : moneysupply,
-                  "fortunastakes" : fortunastakecount,
+                  "collateralnodes" : collateralnodecount,
                   "posdiff" : posdiff,
                   "powdiff" : powdiff,
                   "mininghashrate" : mininghashrate,

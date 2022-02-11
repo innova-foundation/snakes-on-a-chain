@@ -1,4 +1,4 @@
-from denariusrpc.authproxy import AuthServiceProxy, JSONRPCException
+from innovarpc.authproxy import AuthServiceProxy, JSONRPCException
 
 import time
 import sys
@@ -8,14 +8,14 @@ import json
 import requests
 from influxdb import InfluxDBClient
 
-# rpc_user and rpc_password are set in the denarius.conf file
-rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:32369"%("rpcuser", "rpcpassword"))
+# rpc_user and rpc_password are set in the innova.conf file
+rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:14531"%("rpcuser", "rpcpassword"))
 
 # Configure InfluxDB connection variables
 host = "127.0.0.1" # My Ubuntu server
 port = 8086 # default port
 user = "admin" # the user/password created, with write access
-password = "admin" 
+password = "admin"
 dbname = "pools" # the database we created earlier
 interval = 60 # Sample period in seconds
 
@@ -25,7 +25,7 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 #iso = time.ctime()
 blockcount = rpc_connection.getblockcount()
@@ -36,7 +36,7 @@ grafanatime = block['time'] * 1000000000
 atom_miner_url = requests.get('https://api.atomminer.com/pool/pools')
 atom_miner_data = json.loads(atom_miner_url.text)
 for element in atom_miner_data['result']:
-    if element['name'] == 'Denarius':
+    if element['name'] == 'Innova':
         atom_miner_workers = element['miners']
         atom_miner_hashrate = float(element['hashrate_raw']) / 1000000000
         atom_miner_block = float(element['height'])

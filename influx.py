@@ -1,9 +1,9 @@
-from denariusrpc.authproxy import AuthServiceProxy, JSONRPCException
+from innovarpc.authproxy import AuthServiceProxy, JSONRPCException
 
-# rpc_user and rpc_password are set in the denarius.conf file
-rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:32369"%("rpcusername", "rpcpassword"))
-get_fortunastake_info = rpc_connection.fortunastake('list', 'full')
-print(get_fortunastake_info)
+# rpc_user and rpc_password are set in the innova.conf file
+rpc_connection = AuthServiceProxy("http://%s:%s@127.0.0.1:14531"%("rpcusername", "rpcpassword"))
+get_collateralnode_info = rpc_connection.collateralnode('list', 'full')
+print(get_collateralnode_info)
 import time
 import sys
 import datetime
@@ -23,7 +23,7 @@ client = InfluxDBClient(host, port, user, password, dbname)
 # think of measurement as a SQL table, it's not...but...
 measurement = "measurement"
 # location will be used as a grouping tag later
-blockchain = "denarius"
+blockchain = "innova"
 
 # Run until you get a ctrl^c
 def main():
@@ -38,9 +38,9 @@ def main():
     getblockhashinfo = rpc_connection.getblock(bestblockhash)
     blockhashinfowork = str(getblockhashinfo['flags'])
     blockhashinfotime = int(getblockhashinfo['time'])
-# fortunastake info
-    fortunastakeinfo = rpc_connection.fortunastake('count')
-    fortunastakecount = fortunastakeinfo
+# collateralnode info
+    collateralnodeinfo = rpc_connection.collateralnode('count')
+    collateralnodecount = collateralnodeinfo
     iso = time.ctime()
         # Print for debugging, uncomment the below line
         # print("[%s] Temp: %s, Humidity: %s" % (iso, temperature, humidity)) 
@@ -60,7 +60,7 @@ def main():
                   "work" : blockhashinfowork,
                   "bestblockhash" : bestblockhash,
                   "moneysupply" : moneysupply,
-                  "fortunastakes" : fortunastakecount
+                  "collateralnodes" : collateralnodecount
               }
           }
         ]
