@@ -45,14 +45,6 @@ last block delta: 24  seconds
 ```  
 #### python cnwinner.py  
 ```
-Winner of block 1882393 is iEvoM9J9TszGx4tgU4EAcerqsfBEGfbMXt
-Winner of block 1882394 is iCUzymwxCf8V4HWvYChiLGYXKhTSEaaE8f
-Winner of block 1882395 is iCUzymwxCf8V4HWvYChiLGYXKhTSEaaE8f
-Winner of block 1882396 is iNHioiKUau4FmtTwT2WFRQcjeQLLnyV4R5
-Winner of block 1882397 is iNHioiKUau4FmtTwT2WFRQcjeQLLnyV4R5
-Winner of block 1882398 is iCUzymwxCf8V4HWvYChiLGYXKhTSEaaE8f
-Winner of block 1882399 is iRGQdFVZuyciXca4ttVTFVr3ThDL5wZ8hg
-Winner of block 1882400 is iRGQdFVZuyciXca4ttVTFVr3ThDL5wZ8hg
 Winner of block 1882401 is iBxkgPucWhSz6ARbejRwznD3RMNur3BGQD
 Winner of block 1882402 is iSM8P3ibwu6a5KK29GCQubsBTkScKNDHYc
 Winner of block 1882403 is iEPTABUiwoEmxeBUgiAicqUrha1ev9wFvv
